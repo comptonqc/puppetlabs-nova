@@ -22,7 +22,7 @@ class nova::compute::libvirt (
       provider => $::nova::params::special_service_provider,
     }
 
-    Service['messagebus'] -> Service['nova-compute']
+    Service['messagebus'] -> Service['libvirt']
   }
 
   if $migration_support {
